@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, make_response
 from markupsafe import escape
 from flask import request
 
@@ -32,3 +32,9 @@ def login():
 # @app.post('/login')
 # def login_post():
 #     return do_the_login()
+
+@app.errorhandler(404)
+def page_not_found(error):
+    resp = make_response(render_template('page_not_found.html', error=error), 404)
+    resp.headers['X-ERROR'] = 'ERRO 404' # add aditional information on response headers
+    return resp
