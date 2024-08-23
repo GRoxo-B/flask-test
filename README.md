@@ -1,6 +1,6 @@
 # flask-test
 
-![Flask](https://img.shields.io/badge/Flask-v2.0-blue)
+![Flask](https://img.shields.io/badge/Flask-v3.0-blue)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-yellow)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
