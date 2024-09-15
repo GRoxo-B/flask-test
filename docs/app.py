@@ -38,3 +38,7 @@ def page_not_found(error):
     resp = make_response(render_template('page_not_found.html', error=error), 404)
     resp.headers['X-ERROR'] = 'ERRO 404' # add aditional information on response headers
     return resp
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
