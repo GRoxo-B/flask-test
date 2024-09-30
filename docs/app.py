@@ -17,13 +17,6 @@ def show_user_profile(username):
     # show the user profile for that user
     return render_template('profile.html', person=username)
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        return do_the_login()
-    else:
-        return show_the_login_form()
-
 @app.route('/json')
 def get_json():
     data = {
