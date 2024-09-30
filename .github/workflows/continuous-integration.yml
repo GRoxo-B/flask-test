@@ -17,3 +17,16 @@ jobs:
         uses: advanced-security/python-lint-code-scanning-action@v1.1.1
         with:
           linter: pylint
+
+  discord:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run Discord Webhook
+      uses: th0th/notify-discord@v0.4.1
+      if: ${{ always() }}
+      env:
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK }}
+        GITHUB_ACTOR: ${{ github.actor }}
+        GITHUB_JOB_NAME: "Build and deploy"
+        GITHUB_JOB_STATUS: ${{ job.status }}
