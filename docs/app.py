@@ -24,14 +24,25 @@ def login():
     else:
         return show_the_login_form()
 
-# OR
-# @app.get('/login')
-# def login_get():
-#     return show_the_login_form()
+@app.route('/json')
+def get_json():
+    data = {
+        'name': 'John Doe',
+        'age': 30,
+        'city': 'New York'
+    }
+    return data
 
-# @app.post('/login')
-# def login_post():
-#     return do_the_login()
+@app.route('/setcookie')
+def set_cookie():
+    resp = make_response("Cookie is set")
+    resp.set_cookie('username', 'john_doe')
+    return resp
+
+@app.route('/getcookie')
+def get_cookie():
+    username = request.cookies.get('username')
+    return f'Username is {username}'
 
 @app.errorhandler(404)
 def page_not_found(error):
