@@ -4,7 +4,9 @@ FROM python:3
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y git \
-    && git clone https://github.com/GRoxo-B/flask-test.git /app
+    && git clone https://github.com/GRoxo-B/flask-test.git /app \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app/docs
 

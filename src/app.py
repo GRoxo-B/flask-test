@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, make_response
+from flask import Flask, render_template, make_response
 from markupsafe import escape
 from flask import request
 
