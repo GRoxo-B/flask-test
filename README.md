@@ -20,3 +20,7 @@ Ensure you have Python 3.8+ installed on your system.
    ```bash
    git clone https://github.com/yourusername/flask-test.git
    cd flask-test
+
+2. **Run requirements:**
+   ```bash
+   pip install -r requirements.txt
