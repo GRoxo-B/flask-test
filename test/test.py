@@ -1,9 +1,5 @@
 import unittest
-import sys
-import os
-
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
-from app import app
+from src.app import app
 
 class FlaskTestCase(unittest.TestCase):
     def setUp(self):
